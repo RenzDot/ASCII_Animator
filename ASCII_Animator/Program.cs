@@ -4,7 +4,8 @@ using System.Text;
 
 namespace ASCII_Animator
 {
-    class Program {
+    class Program
+    {
         static void Main(string[] args) {
             List<string> frames;
 
@@ -21,7 +22,8 @@ namespace ASCII_Animator
         }
     }
 
-    public class Twerk : Anime {
+    public class Twerk : Anime
+    {
         public Twerk() {
             SetFrames(new List<string> {
                 @"\n    :-.\n  .+###+.\n.=_ :+: _=.\n   .+++.\n  :#   #;\n =+     +=\n",
@@ -31,12 +33,13 @@ namespace ASCII_Animator
                 @"\n    :-.\n  .+###+.\n.=_ :+: _=.\n   .+++.\n  :#   #;\n =+     +=\n",
                 @"\n    :-.\n  .+###+.\n.=_ :+: _=.\n    .++.\n  :#  #;\n =+    +=\n",
                 @"\n    :-.\n  .+###+.\n.=_ +:: _=.\n    .++.\n  :#   #;\n =+    +=\n",
-                @"\n    :-.\n  .+###+.\n.=_ +:: _=.\n    .++.\n  :#  #;\n =+    +=\n" 
+                @"\n    :-.\n  .+###+.\n.=_ +:: _=.\n    .++.\n  :#  #;\n =+    +=\n"
             });
         }
     }
 
-    public class Nyan : Anime {
+    public class Nyan : Anime
+    {
         public Nyan() {
             SetFrames(new List<string> {
                 @"\n  \n      .  .\n     ( 'w')\n \n",
@@ -45,7 +48,8 @@ namespace ASCII_Animator
         }
     }
 
-    public class AmongUs: Anime {
+    public class AmongUs : Anime
+    {
         public AmongUs() {
             SetFrames(new List<string> {
             @"    __\n .`:__:\n|X:::::\n'x;::::\n   V  >",
@@ -56,7 +60,8 @@ namespace ASCII_Animator
         }
     }
 
-    public class Duratech : Anime {
+    public class Duratech : Anime
+    {
         public Duratech() {
             SetFrames(new List<string> {
             @"\n':        '\n':        '\n':        '\n\n",
@@ -82,7 +87,8 @@ namespace ASCII_Animator
         }
     }
 
-    public class Rain : Anime {
+    public class Rain : Anime
+    {
         public Rain() {
             SetFrames(new List<string> {
             @"\n|      |\n    |\n    |   | |\n|  |\n----*--*---",
@@ -106,7 +112,8 @@ namespace ASCII_Animator
         }
     }
 
-    public class Pick : Anime {
+    public class Pick : Anime
+    {
         public Pick() {
             SetFrames(new List<string> {
             @"\n\n  o\n <|\ :;:;\n / \ :;:;\n",
@@ -117,29 +124,33 @@ namespace ASCII_Animator
         }
     }
 
-    public class LiftOff : Anime {
-        SetFrames(new List<string> {
+    public class LiftOff : Anime
+    {
+        public LiftOff() {
+            SetFrames(new List<string> {
             @"\n |T|T|T|\n \  :  /\n    '\n   !|!\n   |!|",
             @"\n |T|T|T|\n \  .  /\n   .:.\n   |!|\n   !|!"
-        };
-
-        public LiftOff() { }
+        });
+        }
     }
 
-    public class Fire : Anime {
-        SetFrames(new List<string> {
+    public class Fire : Anime
+    {
+        public Fire() {
+            SetFrames(new List<string> {
             @"\n      .\n     *\n    ,&+\n   x&@%x\n  ==---==",
             @"\n     . '\n    ':'\n    *%a\n   x%.@x\n  ==---==",
             @"\n   . *\n    .&*\n     @\n   x.*,x\n  ==---==",
             @"\n   '.*,\n     s\n     .\n   x+&*x\n  ==---==",
             @"\n    ',\n     .\n     *\n   xd%Bx\n  ==---=="
-        };
-
-        public Fire() { }
+        });
+        }
     }
 
-    public class Yoda : Anime {
-        SetFrames(new List<string> {
+    public class Yoda : Anime
+    {
+        public Yoda() {
+            SetFrames(new List<string> {
             @"\n    __\n\`_    _-'/\n ` . .  /\n _\ -  /_\n/\ ,,, / \",
             @"\n    __\n |`_  _-'/\n ` . .  /\n _\ -  /_\n/\ ,,, / \",
             @"\n    __\n |`_   _-'/\n ` . .  /\n _\ -  /_\n/\ ,,, / \",
@@ -151,13 +162,14 @@ namespace ASCII_Animator
             @"\n    __\n |`_   -'/\n ` . .  /\n _\ -  /_\n/\ ,,, / \",
             @"\n    __\n |`_   _-'/\n ` . .  /\n _\ -  /_\n/\ ,,, / \",
             @"\n    __\n\`_    _-'/\n ` . .  /\n _\ -  /_\n/\ ,,, / \"
-        };
-
-        public Yoda() { }
+        });
+        }
     }
 
-    public class Pacman : Anime {
-        SetFrames(new List<string> {
+    public class Pacman : Anime
+    {
+        public Pacman() {
+            SetFrames(new List<string> {
             @"\n\n\n  ( . . . .\n\n",
             @"\n\n\n  <. . . *\n\n",
             @"\n\n\n  - . . * .\n\n",
@@ -178,44 +190,47 @@ namespace ASCII_Animator
             @"\n\n\n  <.   . .\n\n",
             @"\n\n\n  -   . . .\n\n",
             @"\n\n\n  <  . . .\n\n"
-        };
-
-        public Pacman() { }
+        });
+        }
     }
 
-    public class Magic : Anime {
-        SetFrames(new List<string> {
-            @"\n   \n   *\n O_|\n/| |\n/ \|",
-            @"\n   \n   *\n O_|\n(| |\n/ \|",
-            @"\n   \n   *\n O_|\n |\|\n/ \|",
-            @"\n  * \n   \\n O/_\\n |   \\n/ \ ",
-            @"\n\n-----\n\O)\n |\n/ \",
-            @"\n   `*  -\n    | `\n O/_|\n |  |\n/ \",
-            @"\n    | \\n  < * - .__\n O_/  `\n(|/ \n/ \",
-            @"\n   . .\n  - * -___\n O_/'     \\n(|/       |\n/ \",
-            @"\n\n    *\n O_/\n(|/ \n/ \     _\_",
-            @"\n\n    *\n O_/\n(|/    - ..\n/ \    '___",
-            @"\n\n    *\n O_/ _   .\n(|/    `   `\n/ \     ___",
-            @"\n\n   *     . '\n O_| `\n/| |\n/ \|     _",
-            @"\n         .\n   *\n O_|\n/| |\n/ \|"
-        };
-
-        public Magic() { }
+    public class Magic : Anime
+    {
+        public Magic() {
+            SetFrames(new List<string> {
+                            @"\n   \n   *\n O_|\n/| |\n/ \|",
+                            @"\n   \n   *\n O_|\n(| |\n/ \|",
+                            @"\n   \n   *\n O_|\n |\|\n/ \|",
+                            @"\n  * \n   \\n O/_\\n |   \\n/ \ ",
+                            @"\n\n-----\n\O)\n |\n/ \",
+                            @"\n   `*  -\n    | `\n O/_|\n |  |\n/ \",
+                            @"\n    | \\n  < * - .__\n O_/  `\n(|/ \n/ \",
+                            @"\n   . .\n  - * -___\n O_/'     \\n(|/       |\n/ \",
+                            @"\n\n    *\n O_/\n(|/ \n/ \     _\_",
+                            @"\n\n    *\n O_/\n(|/    - ..\n/ \    '___",
+                            @"\n\n    *\n O_/ _   .\n(|/    `   `\n/ \     ___",
+                            @"\n\n   *     . '\n O_| `\n/| |\n/ \|     _",
+                            @"\n         .\n   *\n O_|\n/| |\n/ \|"
+                        });
+        }
     }
 
-    public class Skate : Anime {
-        SetFrames(new List<string> {
+    public class Skate : Anime
+    {
+        public Skate() {
+            SetFrames(new List<string> {
             @"\n    _ O\n   / /\/\n __ /\__ __\n   /  \\n  LOL LOL",
             @"\n     _O\n   / /|_\n_ __ |_ __\n    /|\n   LLOL",
             @"\n      O\n     /_\n __ _|\__ _\n    / |\n   LOLLOL",
             @"\n    _ O\n   / /\/\n_ _ /\_ _\n   /  \\n  LOL LOL"
-        };
-
-        public Skate() { }
+        });
+        }
     }
 
-    public class Monke : Anime {
-        SetFrames(new List<string> {
+    public class Monke : Anime
+    {
+        public Monke() {
+            SetFrames(new List<string> {
             @"\n  _ _\nC(o.o)3\n /{-}\\n\     /   .\n C   O __/",
             @"\n  _ _\nC(._.)3\n /{-}\\n\     /  .\n C   O __/",
             @"\n  _ _\nC(._.)3\n /{-}\\n \   /  .\n  C ) -__}",
@@ -233,23 +248,24 @@ namespace ASCII_Animator
             @"\n  _ _\nC(o.o)3\n /{-}\\n\     /  .\n C   O __/",
             @"\n  _ _\nC(o.o)3\n /{-}\\n\     / .\n C   O __}",
             @"\n  _ _\nC(o.o)3\n /{-}\\n\     /  .\n C   O __/"
-        };
-        public Monke() { }
+        });
+        }
     }
     interface IAnime { }
-    public class Anime : IAnime {
-        protected List<string[]> lines;
+    public class Anime : IAnime
+    {
+        protected List<string[]> segments;
         protected List<string> frames;
 
-        public Anime() {}
+        public Anime() { }
 
         public List<string> GetFrames() {
-            if (lines == null || lines.Count == 0) { return frames;  }
+            if (segments == null || segments.Count == 0) { return frames; }
             frames = new List<string>() { };
             var segment = new StringBuilder();
-            foreach (var frame in lines) {
+            foreach (var part in segments) {
                 segment.Clear();
-                foreach (var line in frame) {
+                foreach (var line in part) {
                     segment.Append(line);
                 }
                 frames.Add(segment.ToString());
@@ -261,14 +277,18 @@ namespace ASCII_Animator
         public void SetFrames(List<string> frames) {
             this.frames = frames;
         }
+
+        public void SetSegments(List<string[]> segments) {
+            this.segments = segments;
+        }
     }
 
-    public class Text : Anime {
-        public Text() {
-            var cut = new List<string>();
-
+    public class Alphabets : Anime
+    {
+        public Alphabets() {
+            SetFrames(Fuzzy);
             for (int i = 0; i < frames.Count; i++) {
-                frames[i].Substring(0, frames[i].Length-2);
+                frames[i].Substring(0, frames[i].Length - 2);
             }
         }
 
