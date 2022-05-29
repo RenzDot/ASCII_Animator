@@ -7,17 +7,17 @@ namespace ASCII_Animator
     class Program
     {
         static void Main(string[] args) {
-            List<string> frames;
+            List<string> animation;
 
-            for (int i = 0; true; i++) {
-                frames = (new Twerk()).GetFrames();
-                i = i % frames.Count;
-                string frame = frames[i];
+            for (int i = 0; true; ) {
+                animation = (new Twerk()).GetFrames();
+                i = (i % animation.Count + animation.Count) % animation.Count; 
+                string frame = animation[i];
                 frame = frame.Replace(@"\n", Environment.NewLine);
 
                 Console.Clear();
                 Console.Write(frame + $"\n\n Frame: {i + 1}");
-                var key = Console.ReadKey();
+                if (Console.ReadKey().Key.ToString() == "LeftArrow") { i--; } else { i++; }
             }
         }
     }
@@ -25,15 +25,70 @@ namespace ASCII_Animator
     public class Twerk : Anime
     {
         public Twerk() {
-            SetFrames(new List<string> {
-                @"\n    :-.\n  .+###+.\n.=_ :+: _=.\n   .+++.\n  :#   #;\n =+     +=\n",
-                @"\n    :-.\n  .+###+.\n.=_ :+: _=.\n   .++.\n  :#  #;\n =+    +=\n",
-                @"\n    :-.\n  .+###+.\n.=_ :+. _=.\n    ++.\n  :#  #;\n =+    +=\n",
-                @"\n    :-.\n  .+###+.\n.=_ +++ _=.\n   .++.\n  :#  #;\n =+    +=\n",
-                @"\n    :-.\n  .+###+.\n.=_ :+: _=.\n   .+++.\n  :#   #;\n =+     +=\n",
-                @"\n    :-.\n  .+###+.\n.=_ :+: _=.\n    .++.\n  :#  #;\n =+    +=\n",
-                @"\n    :-.\n  .+###+.\n.=_ +:: _=.\n    .++.\n  :#   #;\n =+    +=\n",
-                @"\n    :-.\n  .+###+.\n.=_ +:: _=.\n    .++.\n  :#  #;\n =+    +=\n"
+            SetFrames(new string[,] {
+                {   "\n    :-.",
+                    "\n  .+###+.",
+                    "\n.=_ :+: _=.",
+                    "\n   .+++.",
+                    "\n  :#   #;",
+                    "\n =+     +=",
+                    "\n" 
+                },
+                {   "\n    :-.",
+                    "\n  .+###+.",
+                    "\n.=_ :+: _=.",
+                    "\n   .++.",
+                    "\n  :#  #;",
+                    "\n =+    +=",
+                    "\n"
+                },
+                {   "\n    :-.",
+                    "\n  .+###+.",
+                    "\n.=_ :+. _=.",
+                    "\n    ++.",
+                    "\n  :#  #;",
+                    "\n =+    +=",
+                    "\n" 
+                },
+                {   "\n    :-.",
+                    "\n  .+###+.",
+                    "\n.=_ +++ _=.",
+                    "\n   .++.",
+                    "\n  :#  #;",
+                    "\n =+    +=",
+                    "\n"
+                },
+                {   "\n    :-.",
+                    "\n  .+###+.",
+                    "\n.=_ :+: _=.",
+                    "\n   .+++.",
+                    "\n  :#   #;",
+                    "\n =+     +=",
+                    "\n"
+                },
+                {   "\n    :-.",
+                    "\n  .+###+.",
+                    "\n.=_ :+: _=.",
+                    "\n    .++.",
+                    "\n  :#  #;",
+                    "\n =+    +=",
+                    "\n"
+                },
+                {   "\n    :-.",
+                    "\n  .+###+.",
+                    "\n.=_ +:: _=.",
+                    "\n    .++.",
+                    "\n  :#   #;",
+                    "\n =+    +=",
+                    "\n"
+                },
+                {   "\n    :-.",
+                    "\n  .+###+.",
+                    "\n.=_ +:: _=.",
+                    "\n    .++.",
+                    "\n  :#  #;",
+                    "\n =+    +=",
+                    "\n"}
             });
         }
     }
@@ -254,23 +309,11 @@ namespace ASCII_Animator
     interface IAnime { }
     public class Anime : IAnime
     {
-        protected List<string[]> segments;
         protected List<string> frames;
 
         public Anime() { }
 
         public List<string> GetFrames() {
-            if (segments == null || segments.Count == 0) { return frames; }
-            frames = new List<string>() { };
-            var segment = new StringBuilder();
-            foreach (var part in segments) {
-                segment.Clear();
-                foreach (var line in part) {
-                    segment.Append(line);
-                }
-                frames.Add(segment.ToString());
-            }
-
             return frames;
         }
 
@@ -278,8 +321,20 @@ namespace ASCII_Animator
             this.frames = frames;
         }
 
-        public void SetSegments(List<string[]> segments) {
-            this.segments = segments;
+        public void SetFrames(string[,] segments) {
+            var frames = new List<string>();
+            int rowSize = segments.GetLength(1);
+            int colSize = segments.GetLength(0);
+
+            var row = new StringBuilder();
+            for (int i = 0; i < colSize; i++) {
+                row.Clear();
+                for (int j = 0; j < rowSize; j++) {
+                    row.Append(segments[i, j]);
+                }
+                frames.Add(row.ToString());
+            }
+            this.frames = frames;
         }
     }
 
