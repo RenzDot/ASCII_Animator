@@ -7,12 +7,14 @@ namespace ASCII_Animator
     class Program
     {
         static void Main(string[] args) {
-            List<string> animation;
+            //Anime animation = new AmongUs();//Change class here to a class below to change animation
+            Anime animation = new Rain();
+            //Anime animation = new Magic();
 
             for (int i = 0; true; ) {
-                animation = (new Twerk()).GetFrames();
-                i = (i % animation.Count + animation.Count) % animation.Count; 
-                string frame = animation[i];
+                List<string> frames = animation.GetFrames();
+                i = (i % frames.Count + frames.Count) % frames.Count; 
+                string frame = frames[i];
                 frame = frame.Replace(@"\n", Environment.NewLine);
 
                 Console.Clear();
